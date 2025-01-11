@@ -1,16 +1,8 @@
+# React + Vite
 
-# News Reader Application
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-A responsive News Reader Application built with React and Tailwind CSS, fetching data from [TheNewsAPI](https://www.thenewsapi.com/).
+Currently, two official plugins are available:
 
-## Features
-- Fetch and display latest news articles.
-- View detailed information for each article.
-- Search and filter articles by keywords or categories.
-- Responsive design optimized for desktop and mobile.
-
-## Setup Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/news-reader-app.git
-   cd news-reader-app
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
