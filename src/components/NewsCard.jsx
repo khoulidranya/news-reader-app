@@ -43,6 +43,24 @@ const NewsCard = ({ article }) => {
           </p>
         </div>
 
+        {/* Category Tags */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          {article.categories && article.categories.length > 0 ? (
+            article.categories.map((category, index) => (
+              <span
+                key={index}
+                className="inline-block bg-gray-200 text-gray-800 px-3 py-1 text-sm rounded-full"
+              >
+                {category}
+              </span>
+            ))
+          ) : (
+            <span className="inline-block bg-gray-200 text-gray-800 px-3 py-1 text-sm rounded-full">
+              Uncategorized
+            </span>
+          )}
+        </div>
+
         {/* Author and Published Date */}
         <div className="flex items-center">
           <img
