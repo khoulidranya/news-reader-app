@@ -6,7 +6,7 @@ const SearchBar = ({ onSearchResults }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const apiToken = 'MXS6UTKpEBrolKRdRda7IQCcWvGnm9t4bagKLuAj';
+  const apiToken = 'EjHvK9Gizp5fVWwjV5NdK4dQ5TbgNmzuNEjj5tW6';
   const apiUrl = 'https://api.thenewsapi.com/v1/news/all';
 
   // Handle search logic
@@ -64,13 +64,13 @@ const SearchBar = ({ onSearchResults }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={handleKeyPress}
         placeholder="Search for news..."
-        aria-label="Search for news"
-        className="w-full p-2 border rounded"
+        aria-label="Search :"
+        className="w-full p-2 border rounded box-shadow-md"
       />
       <button
         onClick={handleSearch}
         disabled={isLoading}
-        className={`mt-2 px-4 py-2 text-white rounded ${
+        className={`mt-2 px-4 py-2 text-white rounded box-shadow-md ${
           isLoading
             ? 'bg-gray-300 cursor-not-allowed'
             : 'bg-blue-500 hover:bg-blue-600'

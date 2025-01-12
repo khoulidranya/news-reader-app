@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FiLoader } from "react-icons/fi"; // Import the loader icon
+import { FiLoader } from "react-icons/fi";
 import SearchBar from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
+
 
 const HomePage = () => {
   const [articles, setArticles] = useState([]);
@@ -10,13 +11,13 @@ const HomePage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchInitialData = async () => {
+    const fetchTopStories = async () => {
       try {
         setIsLoading(true);
         setError(null);
 
         const response = await fetch(
-          "https://api.thenewsapi.com/v1/news/all?api_token=MXS6UTKpEBrolKRdRda7IQCcWvGnm9t4bagKLuAj"
+          `https://api.thenewsapi.com/v1/news/top?api_token=EjHvK9Gizp5fVWwjV5NdK4dQ5TbgNmzuNEjj5tW6&categories=general&language=en`
         );
 
         if (!response.ok) {
@@ -33,7 +34,7 @@ const HomePage = () => {
       }
     };
 
-    fetchInitialData();
+    fetchTopStories();
   }, []);
 
   const handleSearchResults = (results) => {
@@ -68,19 +69,20 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-white shadow-md py-4 sticky top-0 z-50">
-        <nav className="container mx-auto px-4 flex justify-between items-center">
+      <header className="bg-gray shadow-md py-4 sticky top-0 z-50">
+
+        <nav className="container mx-auto px-4 flex justify-between items-center max-w-7xl">
           <h1 className="text-2xl font-bold text-blue-600">News Reader</h1>
           <SearchBar onSearchResults={handleSearchResults} />
         </nav>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 flex-1">
-        <h2 className="text-2xl font-semibold mb-4">Top Stories</h2>
+      <main className="container mx-auto px-4 py-8 flex-1 max-w-7xl">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800">Top Stories</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article) => (
-            <NewsCard key={article.id || article.title || Math.random()} article={article} />
+            <NewsCard key={article.uuid || article.title} article={article} />
           ))}
         </div>
       </main>
