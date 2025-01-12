@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { FiLoader } from "react-icons/fi"; // Import the loader icon
 import SearchBar from "../components/SearchBar";
 import NewsCard from "../components/NewsCard";
 
@@ -40,7 +41,14 @@ const HomePage = () => {
   };
 
   if (isLoading) {
-    return <div className="text-center">Loading...</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div className="flex flex-col items-center">
+          <FiLoader className="animate-spin text-blue-500" size={50} />
+          <p className="mt-4 text-blue-600 font-semibold text-lg">Loading...</p>
+        </div>
+      </div>
+    );
   }
 
   if (error) {
@@ -71,10 +79,9 @@ const HomePage = () => {
       <main className="container mx-auto px-4 py-8 flex-1">
         <h2 className="text-2xl font-semibold mb-4">Top Stories</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articles.map((article) => (
-  <NewsCard key={article.id || article.title || Math.random()} article={article} />
-))}
-
+          {articles.map((article) => (
+            <NewsCard key={article.id || article.title || Math.random()} article={article} />
+          ))}
         </div>
       </main>
 
