@@ -4,6 +4,7 @@ import "../index.css";
 
 const NewsCard = ({ article }) => {
   const imageUrl = article.image_url || "https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg";
+  const authorImage = article.author_image || "/author.svg";
 
   return (
     <div className="max-w-sm w-full lg:max-w-full lg:flex border-gray-400 border rounded overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 bg-white">
@@ -65,7 +66,7 @@ const NewsCard = ({ article }) => {
         <div className="flex items-center">
           <img
             className="w-10 h-10 rounded-full mr-4"
-            src={article.author_image || "https://via.placeholder.com/40"}
+            src={authorImage}
             alt={article.author || "Author Avatar"}
           />
           <div className="text-sm">

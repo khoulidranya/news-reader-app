@@ -53,7 +53,7 @@ const SearchBar = ({ onSearchResults }) => {
   };
 
   return (
-    <div className="mb-4">
+    <div className="flex flex-col sm:flex-row items-center gap-2 mb-4">
       <label htmlFor="search-input" className="sr-only">
         Search for news
       </label>
@@ -64,13 +64,13 @@ const SearchBar = ({ onSearchResults }) => {
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyPress={handleKeyPress}
         placeholder="Search for news..."
-        aria-label="Search :"
-        className="w-full p-2 border rounded box-shadow-md"
+        aria-label="Search:"
+        className="w-full sm:w-auto flex-grow p-2 border rounded shadow-md"
       />
       <button
         onClick={handleSearch}
         disabled={isLoading}
-        className={`mt-2 px-4 py-2 text-white rounded box-shadow-md ${
+        className={`px-4 py-2 text-white rounded shadow-md ${
           isLoading
             ? 'bg-gray-300 cursor-not-allowed'
             : 'bg-blue-500 hover:bg-blue-600'
