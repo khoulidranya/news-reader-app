@@ -6,7 +6,7 @@ const SearchBar = ({ onSearchResults }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const apiToken = 'EjHvK9Gizp5fVWwjV5NdK4dQ5TbgNmzuNEjj5tW6';
+  const apiToken = 'Ejo0AK5FpWi4LLigU2LeF5x4In0XPoY348bzr7Tz';
   const apiUrl = 'https://api.thenewsapi.com/v1/news/all';
 
   // Handle search logic

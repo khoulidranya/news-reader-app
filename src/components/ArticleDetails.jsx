@@ -15,7 +15,7 @@ const ArticleDetails = () => {
 
         // Fetch the article using the UUID
         const response = await fetch(
-          `https://api.thenewsapi.com/v1/news/uuid/${id}?api_token=EjHvK9Gizp5fVWwjV5NdK4dQ5TbgNmzuNEjj5tW6`
+          `https://api.thenewsapi.com/v1/news/uuid/${id}?api_token=Ejo0AK5FpWi4LLigU2LeF5x4In0XPoY348bzr7Tz`
         );
 
         if (!response.ok) {
